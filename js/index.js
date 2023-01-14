@@ -35,6 +35,7 @@ fetch('http://10.66.66.33:2107/code')
                 setTimeout(() => {
                     copied_node.style.color = 'rgb(0, 0, 0)';
                     copied_node.innerHTML = 'Нажмите на код, чтобы скопировать';
+                    copied_node.classList.toggle('hidden');
                 }, 500);
             }, 5000);
         });
