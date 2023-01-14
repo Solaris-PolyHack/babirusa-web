@@ -8,14 +8,21 @@ fetch('http://10.66.66.33:2107/code')
         fetch(`http://10.66.66.33:2107/code_check?code=${code}`)
         .then(res => res.json())
         .then(res => {
-            if (res.link !== 'fall') {
+            if (res.status === 'ok') {
                 clearInterval(chInt);
+                location.href = res.url;
             };
         })
         .catch(err => console.log(err))
     };
 
-    let code = res;
+    let code = '';
+
+    if (res.length === 6) {
+        code = res;
+    } else {
+        code = 'ошибка';
+    };
 
     numbers_node.innerHTML = '';
 
@@ -26,7 +33,7 @@ fetch('http://10.66.66.33:2107/code')
         numbers_node.append(number);
     }
 
-    let chInt = setInterval(checkCode(code), 5000);
+    chInt = setInterval(checkCode, 5000, code);
 
 })
 .catch(err => console.log(err));
