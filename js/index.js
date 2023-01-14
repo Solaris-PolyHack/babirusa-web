@@ -1,12 +1,12 @@
 const numbers_node = document.querySelector('.main__numbers');
 const copied_node = document.querySelector('.main__copied');
 
-fetch('http://10.66.66.33:2107/code')
+fetch('http://10.66.66.27:2107/code')
 .then(res => res.text())
 .then(res => {
     
     const checkCode = code => {
-        fetch(`http://10.66.66.33:2107/code_check?code=${code}`)
+        fetch(`http://10.66.66.27:2107/code_check?code=${code}`)
         .then(res => res.json())
         .then(res => {
             if (res.status === 'ok') {
