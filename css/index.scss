@@ -1,3 +1,5 @@
+  @use './loader';
+  
   @font-face {
     font-family: "SF Pro";
     src: url("../assets/SfPro.OTF");
@@ -91,6 +93,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     width: 100%;
     height: 60%;
     font-size: 30px;
@@ -121,6 +124,8 @@
   }
 
   .main__copied {
+    display: flex;
+    flex-wrap: wrap;
     color: rgb(0, 0, 0);
     font-size: 18px;
     opacity: 1;
@@ -134,4 +139,9 @@
 
   .hidden {
     opacity: 0;
+  }
+
+  .dockerCreate {
+    text-align: center;
+    width: 100%;
   }
